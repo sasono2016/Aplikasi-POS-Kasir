@@ -1,0 +1,8 @@
+{
+  "name": "KASIR-UMKM Pro - POS & Inventaris PHP 8.3+",
+  "description": "Sistem Kasir (POS) dan Inventaris UMKM berbasis web dengan arsitektur PHP 8.3+ OOP Modern, MySQL, Tailwind CSS, dan Laporan Analitik Keuntungan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Thermal Receipt Styling for Portable Bluetooth & Desktop Thermal Printers (58mm / 80mm) */
+@media print {
+  @page {
+    size: 58mm auto;
+    margin: 0;
+  }
+
+  html, body {
+    width: 58mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Courier New', Courier, monospace, monospace !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Sembunyikan seluruh UI web kecuali area struk thermal */
+  body > * {
+    display: none !important;
+  }
+
+  #thermalPrintRoot {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 58mm !important;
+    margin: 0 !important;
+    padding: 2mm 3mm 8mm 3mm !important;
+    box-sizing: border-box !important;
+    background: #fff !important;
+    color: #000 !important;
+    page-break-inside: avoid !important;
+  }
+
+  #thermalPrintRoot * {
+    visibility: visible !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Tampilan preview struk thermal kertas roll di layar monitor */
+.thermal-paper {
+  background: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+}
+
+.thermal-paper::before, .thermal-paper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-size: 12px 6px;
+  background-repeat: repeat-x;
+}
+
+.thermal-paper::before {
+  top: -6px;
+  background-image: radial-gradient(circle at 6px 6px, transparent 6px, #ffffff 6px);
+}
+
+.thermal-paper::after {
+  bottom: -6px;
+  background-image: radial-gradient(circle at 6px 0px, transparent 6px, #ffffff 6px);
+}
